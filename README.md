@@ -41,6 +41,7 @@ Posibilidad de añadir herramientas de análisis estático.
 Mejora de validaciones de entrada en el código de la aplicación.
 
 Actualización continua de imágenes Docker a versiones seguras.
+
 ## ¿Cómo ejecutar la aplicación?
 Para ejecutar la aplicación de forma local, debemos tener Docker y Docker Compose previamente instalados.
 
@@ -49,6 +50,7 @@ Desde la raíz del proyecto, utilizar el siguiente comando:
 docker-compose up --build
 
 La aplicación estará disponible en http://localhost:3000.
+
 ## Seguridad Aplicada
 Durante el desarrollo de este proyecto se han aplicado las siguientes prácticas de seguridad:
 
@@ -61,3 +63,33 @@ Separación de servicios mediante docker-compose (aplicación y base de datos Re
 Creación de un archivo .dockerignore para excluir archivos sensibles y de desarrollo del contenedor final.
 
 Preparación de la aplicación para futuros análisis de seguridad (análisis estático, validaciones de entrada, actualizaciones de imágenes).
+
+## Aplicación de DevSecOps
+Desarrollo colaborativo seguro
+El código se gestiona en GitHub, lo que nos permite trabajar en equipo, llevar control de versiones y mantener trazabilidad de los cambios.
+
+Creamos una estructura de proyecto organizada, separando configuración, código y documentación, lo que mejora la seguridad y el mantenimiento.
+
+Integración continua con enfoque en seguridad
+Proponemos integrar GitHub Actions como pipeline CI/CD. Esto permitiría que, cada vez que alguien suba cambios, se ejecuten automáticamente:
+
+Tests de funcionalidad.
+
+Escaneos de seguridad (por ejemplo, con herramientas como Trivy, Snyk o SonarCloud).
+
+Validaciones del Dockerfile para evitar prácticas inseguras.
+
+Despliegue controlado y seguro
+El uso de Docker nos permite contenerizar la app y desplegarla en entornos aislados, reduciendo los riesgos de exposición.
+
+Gracias a docker-compose, separamos la lógica de la app y el almacenamiento (Redis), cada uno en su propio contenedor, reforzando el principio de mínima exposición.
+
+Mantenimiento proactivo
+De cara al futuro, el pipeline puede ampliarse con alertas ante vulnerabilidades en dependencias o con análisis automáticos de código.
+
+También se podrían integrar métricas o monitoreo para asegurar que el entorno se mantenga estable y seguro.
+
+## Diagrama S-SDLC + DevSecOps
+![Diagrama SSDLC + DevSecOps](./docs/ssdlc_devsecops.png)
+
+

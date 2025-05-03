@@ -1,0 +1,14 @@
+{
+    "name": "todo-app",
+    "version": "1.0.0",
+    "description": "Simple To-Do application with Redis",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "redis": "^4.6.5"
+    }
+  }
+  
